@@ -1,7 +1,8 @@
 # Windows virtualisation on seL4/LionsOS
 
 Work in progress, only runs on QEMU at the moment.
-Windows 10 works, have not tried Windows 11 yet.
+
+Windows 10 works, Windows 11 with TPM/Secure Boot checks bypassed also works.
 
 ## Prerequisites
 
@@ -61,17 +62,22 @@ tar xf microkit-sdk-2.1.0-linux-x86-64-apicv.tar.gz
 
 #### Windows disk image
 
-> [!NOTE]
-> This is a pre-installed Windows disk, we will provide instructions for how to build from
-> just a Windows ISO later.
-> It is ~16GB downloaded, ~30GB unzipped.
+##### Pre-installed
+
+This image has Windows 10 pre-installed, it is ~16GB downloaded, ~30GB unzipped.
 
 ```sh
 wget https://sel4.ivanvelickovic.com/windows/disk.img.xz
 unxz disk.img.xz
 ```
 
+##### Build from ISO
+
+See the instructions at [windows/README.md](windows/README.md).
+Then either copy or move `lionsos_windows_disk.img` to `libvmm/examples/uefi/disk.img`.
+
 ### QEMU
+
 Run with QEMU:
 ```sh
 make MICROKIT_SDK=$(pwd)/microkit-sdk-2.1.0-linux-x86-64-apicv MICROKIT_BOARD=x86_64_generic_vtx qemu
