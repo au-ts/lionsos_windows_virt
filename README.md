@@ -5,7 +5,23 @@ Windows 10 works, have not tried Windows 11 yet.
 
 ## Prerequisites
 
-Before starting, you'll need a Linux machine with an Intel x86-64 CPU with VT-x enabled.
+Before starting, you'll need a Linux machine with an Intel x86-64 CPU
+with VT-x enabled in the BIOS. Your CPU must also support all Intel APICv
+acceleration features that we used in the VMM. Internally we used 10th gen CPUs
+and they supported all the features. To check whether your CPU
+is supported, compile and run the test program `intel_apicv_check.c`:
+```
+$ gcc intel_apicv_check.c
+$ sudo modprobe msr
+$ sudo ./a.out
+Hardware APICv Support Check
+----------------------------
+TPR Shadow supported: YES
+APIC-Register Virtualization: YES
+Virtual Interrupt Delivery: YES
+```
+
+You must get 3 YESes for the VMM to work.
 
 ### Source code
 
@@ -81,7 +97,7 @@ BLK DRIVER|ERROR: driver does not support device capacity smaller than 0x1000 by
 Failed assertion 'false' at /home/ivanv/ts/windows_work/libvmm_windows_checkpoint/libvmm/dep/sddf/drivers/blk/virtio/pci/..//block.c:292 in function virtio_blk_init
 MON|ERROR: received message 0x00000003  badge: 0x0000000000000009  tcb cap: 0x0000000000000012
 MON|ERROR: faulting PD: blk_driver
-Registers: 
+Registers:
 rip : 0x0000000000204847
 rsp: 0x00007fffffffef70
 rflags : 0x0000000000010206
