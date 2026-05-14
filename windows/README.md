@@ -16,11 +16,18 @@ that Windows installation and boot with that for the LionsOS Windows VM.
 
 Below are the steps on how to do the Windows installation.
 
-## 1. Windows ISO
+## 1. Download ISOs
 
 Download the Windows ISO for the version you want:
 * [Windows 10](https://www.microsoft.com/en-us/software-download/windows10ISO)
 * [Windows 11](https://www.microsoft.com/en-us/software-download/windows11)
+
+Download the virtIO drivers:
+```sh
+wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.285-1/virtio-win-0.1.285.iso
+```
+
+You can find other versions/downloads of the virtIO drivers [here](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/).
 
 ## 2. Install Windows on QEMU
 
