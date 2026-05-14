@@ -34,7 +34,7 @@ You can find other versions/downloads of the virtIO drivers [here](https://fedor
 This script below will create the virtual disk and launch QEMU with the
 Windows ISO.
 ```sh
-./install.sh /path/to/iso
+./install.sh [Windows ISO]
 ```
 
 The install is largely automated using an [Autounattend script](./unattended/Autounattend.xml),
