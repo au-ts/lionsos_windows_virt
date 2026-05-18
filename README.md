@@ -62,6 +62,9 @@ tar xf microkit-sdk-2.1.0-linux-x86-64-apicv.tar.gz
 
 #### Windows disk image
 
+Either grab a bootable disk with Windows 10 pre-installed, or follow instructions
+for building either a Windows 10 or Windows 11 disk from an installer ISO.
+
 ##### Pre-installed
 
 This image has Windows 10 pre-installed, it is ~5GB downloaded, ~12GB unzipped.
