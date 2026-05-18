@@ -67,7 +67,7 @@ tar xf microkit-sdk-2.1.0-linux-x86-64-apicv.tar.gz
 This image has Windows 10 pre-installed, it is ~5GB downloaded, ~12GB unzipped.
 
 ```sh
-wget https://sel4.ivanvelickovic.com/windows/disk.img.xz
+wget https://trustworthy.systems/Downloads/windows-vm/disk.img.xz
 unxz disk.img.xz
 ```
 
